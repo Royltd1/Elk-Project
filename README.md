@@ -101,7 +101,7 @@ SSH into the control node and follow the steps below:
 
 _TODO: Answer the following questions to fill in the blanks:_
 - elk-install.yml playbook  is copied to Jumpbox docker at the following loaction /etc/ansible.
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ The playbooks will refer back to the etc/ansible/ansible.cfg file to specify the correct VM's to configure.
+- The playbooks will refer back to the etc/ansible/ansible.cfg file to specify the correct VM's to configure.
   - File beat and Metric beat will be installed on the Web VM used for loadbalncing.
 - Once all VMs and playbooks and instatlled you will need to go to the following url to access the Kibana tool. http://[your.ELK-VM.External.IP]:5601/app/kibana
 
