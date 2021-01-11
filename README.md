@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Elk Stack Diagram](./Images/Diagrams/Elk/Elk_Stack_Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook1.yml file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook1.yml file may be used to install only certain pieces of it, such as docker.io, python3-pip, DVWA.
 
   - README /playbooks_yaml_for_elk_stack/ansible-docker/playbook1.yml: playbook1.yml
 
@@ -75,7 +75,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: 10.0.0.4, 10.0.0.5 and 10.0.0.10
+- 10.0.0.4, 10.0.0.5 and 10.0.0.10
 
 We have installed the following Beats on these machines:
 - Filebeat 
@@ -90,19 +90,24 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Configure ELK VM with doker by adding elkservers to the /etc/ansible/hosts.
-- _TODO Update the Elk install-elk.yml file to include:
-  - Increased virtual memory. (This is nessary for the ELK container to run.)
+- Update the Elk install-elk.yml file to include:
+  - Increased virtual memory. (This is nessary for the ELK container to run effeciaently.)
   - Install docker.io
   - install python3-pip (Docker pyhton pip module.)
-- Run the playbook install-playbook.yml, and navigate to Kibana Landing page local work station to check that the configurations and data streams are working properly.
+- Run the playbook install-elk.yml, and navigate to Kibana Landing page local work station to check that the configurations and data streams are working properly.
 
 ![Kibana Home Page](./images/kibana/kibana_home.png)
 
 
 _TODO: Answer the following questions to fill in the blanks:_
-- elk-install.yml playbook  is copied to Jumpbox docker at the following loaction /etc/ansible.
+- install-elkc.yml playbook  is copied to Jumpbox docker at the following loaction /etc/ansible.
 - The playbooks will refer back to the etc/ansible/ansible.cfg file to specify the correct VM's to configure.
-  - File beat and Metric beat will be installed on the Web VM used for loadbalncing.
+ - Install File beat and Metric beat will be installed on the Web VM's used for load balncing.
+  - README /playbooks_yaml_for_elk_stack/filebeat/roles/filebeat-playbook.yml: filebeat-playbook.yml
+    - README /playbooks_yaml_for_elk_stack/filebeat/files/filebeat-config.yml: filebeat-config.yml
+  - README /playbooks_yaml_for_elk_stack/metricbeat/roles/metricbeat-playbook.yml: metricbeat-playbook.yml
+    - README /playbooks_yaml_for_elk_stack/metricbeat/files/metricbeat-config.yml: metricbeat-config.yml
+
 - Once all VMs and playbooks and instatlled you will need to go to the following url to access the Kibana tool. http://[your.ELK-VM.External.IP]:5601/app/kibana
 
 
