@@ -99,7 +99,7 @@ SSH into the control node and follow the steps below:
 ![Kibana Home Page](./images/kibana/kibana_home.png)
 
 
-_TODO: Answer the following questions to fill in the blanks:_
+
 - install-elkc.yml playbook  is copied to Jumpbox docker at the following loaction /etc/ansible.
 - The playbooks will refer back to the etc/ansible/ansible.cfg file to specify the correct VM's to configure.
  - Install File beat and Metric beat will be installed on the Web VM's used for load balncing.
